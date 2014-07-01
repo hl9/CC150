@@ -1,4 +1,6 @@
+##############################
 I. Arrays and Strings
+##############################
 1. Hash Tables
 2. ArrayList (Dynamically Resizing Array)
 3. StringBuffer
@@ -8,7 +10,9 @@ Common Questions:
 3. String compression aabcccccaaa -> a2b1c5a3
 4. if string A substring of string B
 
+##############################
 II. Linked Lists
+##############################
 1. Create Linked List
 class Node {
    Node next = null;
@@ -27,3 +31,141 @@ Common Questions:
 2. Find the kth to last element of a singly linked list
 3. Implement an algorithm to delete a node in the middle fo a singly linked list, given only access to that node.
 4. Write code to partition a linked list around a value X, such that all nodes less than X come before all nodes greater than or equal to X.
+5. Check if a Linked List has loops
+6. If a Linked List has loops, find the node at the beginning of the loop.
+7. Check if a Linked List is a palindrome.
+
+##############################
+III. Stacks and Queues
+##############################
+1. Implement a Stack
+class Stack {
+   Node top;
+
+   Object pop() { }
+
+   void push() { }
+
+   Object peek() { }
+}
+2. Implement a Queue
+class Queue {
+   Node first, last;
+  
+   Object dequeue() { }
+   
+   void enqueue() { }
+}
+Common Questions:
+1. use a single array to implement three stacks.
+2. to design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in O(1) time.
+3. Towers of Hanoi. Write a program to move the disks from the first tower to the last using stacks
+4. Implement a MyQueue class which implements a q ueue using two stacks.
+
+##############################
+IV. Trees and Graphs
+##############################
+1. Binary Tree vs. Binary Search Tree
+2. Balanced vs. Unbalanced
+3. Full vs. Complete
+4. Binary Tree Traversal
+ in-order, post-order, pre-order
+??? 5. Tree Balancing
+??? 6. Red-Black Trees
+??? 7. AVL Trees
+??? 8. Tries
+9. Graph
+Vertices (plural of vertex)
+Edges 
+G(V, E)
+V={A, B, C}
+E={(A,B), (B,C), (C,A)}
+Path
+Cycle
+Single Path (Path with no repeating vertices)
+Single Cycle
+Connected graph (there is a path between any pair of vertices in the graph)
+Completed graph 
+??? 9. Graph Traversal
+10. BFS (Breadth First Search)
+Use Queue
+11. DFS (Depth First Search)
+In DFS, we visit a node R and then iterate through each of R's adjacent nodes. When visiting a node N that's adjacent to R, we visit all of N's adjacent nodes before going on to R's other adjacent nodes. N is exhaustively searched before R moves on to searching its other children.
+void search(Node root) {
+   if (root == null) return;
+   visit(root);
+   root.visited = true;
+   foreach (Node n in root.adjacent) {
+      if (n.visited == false) search(n);
+   }
+}
+
+Uses Stack to keep track of visited nodes.
+
+class Vertex {
+	int data;
+	boolean visited;
+
+	Vertex getNextUnvisitedAdjacents() { }
+
+	boolean hasUnvisitedAdjacents() { }
+}
+
+void visit(Vertex n) {
+	n.visited = true;
+	System.out.println("Vertex visited " +  n.data);
+}
+
+void DFS(Vertex n) {
+	Stack<Vertex> stack = new Stack<Vertex>();
+    visit(n);
+   // n.visited = true;
+    stack.push(n);
+
+	while (!stack.isEmpty()) {
+		Vertex r = stack.peek();
+		if (r.hasUnvisitedAdjacents()) {
+			Vertex s = r.getNextUnvisitedAdjacents();
+			visit(s);
+			s.visited = true;
+			stack.push(s);
+		} else {
+			stack.pop(r);
+		}
+	}
+
+}
+
+void BFS(Vertex n) {
+	LinkedList<Vertex> queue = new LinkedList<Vertex>();
+	visit(n);
+	queue.add(n);
+
+	while(!queue.isEmpty()) {
+		Vertex r = queue.getFirst();
+		while (r.hasUnvisitedAdjacents()) {
+			Vertext v = r.getNextUnvisitedAdjacents();
+			visit(v);
+			queue.add(v);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
+##############################
