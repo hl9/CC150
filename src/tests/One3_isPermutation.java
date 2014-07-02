@@ -43,7 +43,8 @@ public class One3_isPermutation {
 		}
 
 		if (hm.get(s2.charAt(i)) == 0) {
-			hm.remove(s2.charAt(i), hm.get(s2.charAt(i)));
+			hm.remove(s2.charAt(i));
+//			hm.remove(s2.charAt(i), hm.get(s2.charAt(i)));
 		}
 	}
 
