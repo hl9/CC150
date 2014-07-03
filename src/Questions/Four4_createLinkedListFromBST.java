@@ -1,4 +1,4 @@
-package Solutions;
+package Questions;
 
 import java.util.Stack;
 import java.util.LinkedList;

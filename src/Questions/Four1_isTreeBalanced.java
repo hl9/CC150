@@ -1,4 +1,4 @@
-package Solutions;
+package Questions;
 
 // implement a function to check if a tree is balanced.
 // a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from the root by more than one.
