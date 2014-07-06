@@ -39,7 +39,7 @@ public class Implement_BinaryTreeTraverse {
 		}
 		
 	}
-	
+	// Pre Order (DLR) Traverse recursive
 	static void DLRTraverse(BinaryTreeNode root) {
 		if (root !=null ) {
 			System.out.println(root.getData());
@@ -47,7 +47,7 @@ public class Implement_BinaryTreeTraverse {
 			DLRTraverse(root.getRight());
 		}
 	}
-	
+	// Pre Order (DLR) Traverse not recursive
 	static void DLRTraverse2(BinaryTreeNode root) {
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
 		
@@ -65,7 +65,7 @@ public class Implement_BinaryTreeTraverse {
 			} else break;
 		}
 	}
-	
+	// In Order (LDR) traversal recursive
 	static void LDR(BinaryTreeNode root) {
 		if (root != null) {
 			LDR(root.getLeft());
@@ -73,7 +73,7 @@ public class Implement_BinaryTreeTraverse {
 			LDR(root.getRight());
 		}
 	}
-	
+	// In Order (LDR) traversal non recursive
 	static void LDR2(BinaryTreeNode root) {
 		BinaryTreeNode node = root;
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
@@ -89,7 +89,7 @@ public class Implement_BinaryTreeTraverse {
 			node = node.getRight();
 		}
 	}
-	
+	// Post Order (LRD) Traversal recursive
 	static void LRD(BinaryTreeNode root) {
 		if (root != null) {
 			LRD(root.getLeft());
@@ -97,7 +97,7 @@ public class Implement_BinaryTreeTraverse {
 			System.out.println(root.getData());
 		}
 	}
-	
+	// Post Order (LRD) Traversal not recursive
 	static void LRD2(BinaryTreeNode root) {
 
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();

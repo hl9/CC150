@@ -1,0 +1,198 @@
+﻿
+String functoins:
+	String 	str.substring(start_index, end_index);
+	char	str.charAt(index); //one character of a string
+	char[] arrS = str.toCharArray();
+	String(char_array); // build String from an array of chars
+	String.valueOf(integer); //convert Integer to String
+	str.length();
+	arr.length;
+
+	str.indexOf("a");
+Integer:
+	String.valueOf(integer); // convert Integer to String
+
+char (character):
+	char c = str.charAt(0);
+	char[] arrS = str.toCharArray();
+	int ascii = (int)c;
+	char c = 'a'; // single quotation
+
+Arrays:
+	arr.length;
+	str.length();
+	Arrays.fill(arrName, 0); //initalize all elements in the array
+	System.out.println(Arrays.toSring(arrName); //print out Array
+	Arrays.sort(arrName); //sort the array
+	Array.setChar(Object array, int index, char c); // set array #index to be of value c ?? never used
+
+ArrayList:
+	ArrayList<Integer, Student> al = new ArrayList<Integer, Student>();
+	ArrayList??????????????,????????????,
+	Arrays.binarySearch(arr, element_to_find); // locate elemnate in a SORTED array
+	al.add();
+	Iterator<String> it = al.iterator();
+
+	for (String str : words) {
+			al.add(str);
+		}
+LinkedList:
+	?LinkedList????????,???????????????????????
+	LinkedList ll = new LinkedList();
+	ll.add();
+	ll.remove();
+	ll.contains();
+	ll.equals();
+	ll.get(i);
+	ll.getFirst();
+	ll.getLast();
+	ll.peek();
+	ll.size();
+	ll.peekFirst();
+	ll.peekLast();
+	ll.isEmpty();
+	ll.iterator();
+	ll.poll();
+	ll.pollFirst();
+	ll.pollLast();
+
+LinkedListNode <-- self Defined, not in JAVA
+
+Set:
+	unique key
+HashSet: (quick sort?)
+	HashSet hs = new HashSet();
+	hs.add();
+
+TreeSet: (red-black tree data structure)
+	TreeSet:??????Set,??????????????Set????????????
+
+LinkedHashSet(JDK 1.4):
+	??????????Set,??HashSet?????,?????????????(????)?
+	?Iterator??Set???,?????????????
+
+SortedSet:
+	SortedSet(??TreeSet???????)??????????????SortedSet????????:
+	Comparator comparator():??Set????Comparator??,???null?????Object????????
+	Object first():????????
+	Object last():????????
+	SortedSet subSet(fromElement, toElement):??Set???,??????fromElement???toElement??(??fromElement,???toElement)?
+	SortedSet headSet(toElement):??Set???,?????????toElement?
+	SortedSet headSet(toElement):??Set???,?????????fromElement?
+	??,SortedSet???“?????????”,???“????”????.
+
+Map: 
+	Map??????????????????
+	?????
+	????????????. ??????????????????
+
+HashMap:
+	HashMap??????????,?????????
+	HashMap<Integer, Student> hm = new HashMap<Integer, Student>();
+	hm.put(1, student1);
+	hm.get(1);
+	for (Entry<Integer, Student> ent : hm.entrySet()) {
+		System.out.println(ent.getKey() + " - " + ent.getValue().getName());
+	}
+
+Entry ^^
+LinkedHashMap(JDK 1.4):
+	??HashMap,???Iterator???????,???????????????(least-recently-used(LRU)order)?????
+TreeMap:
+	Based on red-black tree
+	TreeMap????????,????????????,??firstKey(),lastKey()?
+	????TreeMap????????????Map
+	put(Object key,Object value)
+	get(Object key)
+	TreeMap?Map????subMap()????
+
+Enumeration:
+	for (Enumeration<Integer> e = v.elements(); e.hasMoreElements();) {
+			System.out.println(e);
+	}
+
+enum:
+	public enum State {
+ 		Unvisited, Visited, Visiting;
+	}
+Iterator:
+	Iterator<String> it = al.iterator();
+	while (it.hasNext() )
+	it.next();
+	it.add()
+
+ListIterator:
+	ListIterator<String> litr = al.listIterator();
+	litr.hasNext()
+	litr.next()
+	litr.add()
+
+Stack:
+	Stack<Integer> s = new Stack<Integer>();
+	s.push(115);
+	s.pop();
+	s.pop().intValue();
+	s.size()
+	s.peek()
+	public class StackWithMin extends Stack<NodeWithMin> {
+	}
+	class NodeWithMin {
+	}
+
+Vector:
+	Vector<Integer> v = new Vector<Integer>();
+	v.addElement(15);
+	v.elementAt(1);
+	for (Enumeration<Integer> e = v.elements(); e.hasMoreElements();) {
+		System.out.println(e);
+	}
+
+ASCII: 
+	128 characters
+
+StringBuffer: (use when cases with String concatenation)
+	StringBuffer sb = new StringBuffer();
+	sb.append(str);
+	sb.toString();	//StringBuffer to String
+
+Random:
+	import java.util.Random;
+	Random rand = new Random();
+	rand.nextInt(20); // get a random integer within 20
+
+Matrix:
+	int[][] a.
+	number of rows: a.length
+	number of columns: a[0].length
+
+Find Loop in LinkedList:
+	Have pointer1 moves one step at a time, pointer2 moves 2 steps at a time.
+	Once the meet, pointer1 goes to head.
+	Both pointer1 and pointer2 move at regular speed. The point the meet again is the loop start.
+	If n2.next == null, then there is no loop in the linked list.
+
+Exception:
+	void push throws Exception {
+		if (blbabl) {
+			throw new FullStackException();
+		}}
+
+Date:
+	import java.util.Date;
+	Date date = new Date(); //current date.
+	date.toString();
+	date.setYear();
+	date.before();
+	date.after();
+	date.equals();
+	Calendar cal = Calendar.getInstance();
+	cal.set(Calendar.HOUR_OF_DAY,17);
+	cal.set(Calendar.MINUTE,30);
+	cal.set(Calendar.SECOND,0);
+	cal.set(Calendar.MILLISECOND,0);
+	Date d = cal.getTime();
+Inherit:
+	class HeapSort extends Heap {
+	public HeapSort(int capacity) {
+		super(capacity);
+	}

@@ -70,6 +70,8 @@ IV. Trees and Graphs
 3. Full vs. Complete
 4. Binary Tree Traversal
  in-order, post-order, pre-order
+Tree traverses (if not recursive) all use stack.
+
 ??? 5. Tree Balancing
 ??? 6. Red-Black Trees
 ??? 7. AVL Trees
@@ -86,7 +88,7 @@ Single Path (Path with no repeating vertices)
 Single Cycle
 Connected graph (there is a path between any pair of vertices in the graph)
 Completed graph 
-??? 9. Graph Traversal
+??? 9. Graph Traversal (Graph Search Algorithm)
 10. BFS (Breadth First Search)
 Use Queue
 11. DFS (Depth First Search)
@@ -152,9 +154,17 @@ void BFS(Vertex n) {
 }
 
 
+12. Compare DFS (Depth First Search) and BFS (Breadth First Search):
+The big advantage of DFS is taht is has much lower memory requirements than BFS, because it not required to store all of the chid pointers at each level.
+DFS or BFS depends on they type of the problem that we are trying to resolve. BFS visits each level one at a time, and if we know the solution we are searching for is at a low depth then BFS is good. DFS is better choice if the solution is at maximum depth. 
+Application							DFS	BFS
+Spanning forest, connected components, paths, cycles		YES	YES
+Shortest path							NO	YES
+Minimal use of memory space					YES	NO
 
-
-
+Common Questions:
+1. check if a binary tree is balanced
+2. Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
 
 
