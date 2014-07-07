@@ -1,38 +1,41 @@
 package Questions;
 // check if a Binary Tree is balanced
+//solution from book -- enhanced
 
 public class Four1_isBSTBalanced {
-	
-	class BinaryTreeNode {
+	class TreeNode {
 		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-		
-		public BinaryTreeNode(int n) {
+		TreeNode leftChild;
+		TreeNode rightChild;
+
+		public TreeNode (int n) {
 			data = n;
-			left = null;
-			right = null;
+			leftChild = null;
+			rightChild = null;
 		}
 	}
-	
-	boolean isBTBalanced(BinaryTreeNode root) {
-		if (root == null) return true;
-		
-		int lLeft = getLength(root.left);
-		int lRight = getLength(root.right);
-		
-		if ((lLeft - lRight > 1) || (lRight - lLeft > 1)) return false;
-		
-		return (isBTBalanced(root.left) && isBTBalanced(root.right));
+
+	boolean isBalanced(TreeNode root) {
+	   if (root == null) return true;
+	   
+	   if (getHeight(root) < 0) return false;
+	   
+	   return true;
+
 	}
-	
-	int getLength(BinaryTreeNode node) {
-		if (node == null) return 0;
+
+	int getHeight(TreeNode root) {
+		if (root == null)  return 0;
 		
-		int l = 0;
+		int ll = getHeight(root.leftChild);
+		if (ll < 0) return -1;
 		
+		int rr = getHeight(root.rightChild);
+		if (rr < 0) return -1;
 		
+		if (Math.abs(ll-rr) > 1 ) return -1;
 		
-		return l;
+		return Math.max(ll, rr) + 1;
 	}
+
 }

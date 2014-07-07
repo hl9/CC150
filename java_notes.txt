@@ -1,0 +1,2 @@
+Math.max(124, 22); // return max
+Math.abs(-1); // return absolute value
