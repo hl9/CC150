@@ -1,6 +1,5 @@
 package Questions;
 
-import java.util.Arrays;
 
 //Implement an algorithm to determine if a string has all unique characters.
 //* what if you cannot use additional data structure?

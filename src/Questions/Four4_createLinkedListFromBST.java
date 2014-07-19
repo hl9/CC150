@@ -1,10 +1,21 @@
 package Questions;
 
-import java.util.Stack;
 import java.util.LinkedList;
 import java.util.ArrayList;
 
 public class Four4_createLinkedListFromBST {
+	
+	class Node {
+		int data;
+		Node left;
+		Node right;
+
+		public Node (int n) {
+			data = n;
+			left = null;
+			right = null;
+		}
+	}
 	
 	class BSTNode {
 		int data;
@@ -75,4 +86,34 @@ public class Four4_createLinkedListFromBST {
 		return result;
 	}
 
+	
+	ArrayList<LinkedList<Node>> getDLinkedLists(Node root) {
+
+		ArrayList<LinkedList<Node>> result = new ArrayList<LinkedList<Node>>();
+		int level = 0;
+		LinkedList<Node> list = new LinkedList<Node>();
+		list.add(root);
+		result.add(level, list);
+
+		while (true) {
+			list = new LinkedList<Node>();
+			LinkedList<Node> parentList = result.get(level); //result[level];
+			for (Node n : parentList) {
+				if (n.left != null) list.add(n.left);
+				if (n.right != null) list.add(n.right);
+			}
+
+			if (list.size() > 0 ) { //(list != null) {
+				result.add(level+1, list); // result.add(level, list);
+			} else {
+				break;
+			}
+
+			level ++;
+		}
+
+
+
+		return result;
+	}
 }

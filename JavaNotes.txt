@@ -29,8 +29,10 @@ Arrays:
 ArrayList:
 	ArrayList<Integer, Student> al = new ArrayList<Integer, Student>();
 	ArrayList??????????????,????????????,
-	Arrays.binarySearch(arr, element_to_find); // locate elemnate in a SORTED array
-	al.add();
+	Arrays.binarySearch(arr, element_to_find); // locate element in a SORTED array arr
+       al.add(value);
+	al.add(index, value);
+       al.get(index);
 	Iterator<String> it = al.iterator();
 
 	for (String str : words) {
@@ -41,6 +43,7 @@ LinkedList:
 	LinkedList ll = new LinkedList();
 	ll.add();
 	ll.remove();
+        ll.removeFirst();
 	ll.contains();
 	ll.equals();
 	ll.get(i);
@@ -196,3 +199,11 @@ Inherit:
 	public HeapSort(int capacity) {
 		super(capacity);
 	}
+
+Math:
+	Math.max(124, 22); // return max
+	Math.abs(-1); // return absolute value
+
+Integer:
+	Integer.MIN_VALUE
+	Integer.MAX_VALUE

@@ -155,8 +155,8 @@ void BFS(Vertex n) {
 
 
 12. Compare DFS (Depth First Search) and BFS (Breadth First Search):
-The big advantage of DFS is taht is has much lower memory requirements than BFS, because it not required to store all of the chid pointers at each level.
-DFS or BFS depends on they type of the problem that we are trying to resolve. BFS visits each level one at a time, and if we know the solution we are searching for is at a low depth then BFS is good. DFS is better choice if the solution is at maximum depth. 
+The big advantage of DFS is that it has much lower memory requirements than BFS, because it not required to store all of the chid pointers at each level.
+DFS or BFS depends on the type of the problem that we are trying to resolve. BFS visits each level one at a time, and if we know the solution we are searching for is at a low depth then BFS is good. DFS is better choice if the solution is at maximum depth. 
 Application							DFS	BFS
 Spanning forest, connected components, paths, cycles		YES	YES
 Shortest path							NO	YES

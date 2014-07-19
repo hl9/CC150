@@ -1,6 +1,5 @@
 package Questions;
 
-import java.util.*;
 
 public class isBinarySearchTree {
 	class BSTNode {

@@ -1,7 +1,6 @@
 package Questions;
 
 // Given a sorted (increasing order) array, write an algorithm to create a binary tree with minimal height.
-import java.util.LinkedList;
 
 public class Four3_createBinaryTree {
 // root = arr[0]
@@ -10,83 +9,41 @@ public class Four3_createBinaryTree {
 	// right child = arr[2i+2];
 	// parent = arr[(i-1)/2];
 	
-	class BinaryTreeNode {
+	class BSTNode {
 		int data;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-		
-		public BinaryTreeNode(int n) {
+		BSTNode LChild;
+		BSTNode RChild;
+
+		public BSTNode (int n) {
 			data = n;
-			left = null;
-			right = null;
+			LChild = null;
+			RChild = null;
 		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-
-		public BinaryTreeNode getLeft() {
-			return left;
-		}
-
-		public void setLeft(BinaryTreeNode left) {
-			this.left = left;
-		}
-
-		public BinaryTreeNode getRight() {
-			return right;
-		}
-
-		public void setRight(BinaryTreeNode right) {
-			this.right = right;
-		}
-			
 	}
-	
-	void buildBinaryTreeMinHeight(int[] arr) {
+
+	BSTNode buildBST(int[] sortedArr, int start, int end) {
+
+		if (start > end) return null;
+
+		if (start == end) return new BSTNode(sortedArr[start]);
 		
-		if (arr == null) return;
+		int mid = (end + start) / 2;
 		
-		BinaryTreeNode root = new BinaryTreeNode(arr[0]);
+		BSTNode root = new BSTNode(sortedArr[mid]);
+		root.LChild = buildBST(sortedArr, start, mid-1);
+		root.RChild = buildBST(sortedArr, mid+1, end);
 		
-		int i = 0;
-		
-		// left child = arr[2i+1];
-		// right child = arr[2i+2];
-		// parent = arr[(i-1)/2];
-		
-		while (i < arr.length) {
-			if (2*i + 1 < arr.length) {
-				BinaryTreeNode node = new BinaryTreeNode(arr[2*i+1]);
-				root.setLeft(node);
-			}
-			
-			if (2*i + 2 < arr.length)	{
-				BinaryTreeNode node = new BinaryTreeNode(arr[2*i+2]);
-				root.setRight(node);
-			}
-	
-			i++;
-		}
-		
+		return root;
 	}
-	
-	////////////////////////////////////////////////////////////
-	
-	BinaryTreeNode addToTree(int[] arr, int begin, int end) {
-		int mid = (begin + end) / 2;
-		BinaryTreeNode node = new BinaryTreeNode(arr[mid]);
-		node.setLeft(addToTree(arr, begin, mid-1));
-		node.setRight(addToTree(arr, mid+1, end));
-		return node;
-	}
-	
-	void buildBinarySearchTree(int[] arr) {
-		addToTree(arr, 0, arr.length-1);
+
+	BSTNode buildBST(int[] sortedArr) {
+
+		int start = 0;
+		int end = sortedArr.length - 1;
+
+		BSTNode root = buildBST(sortedArr, start, end);
+
+		return root;
 	}
 	
 }

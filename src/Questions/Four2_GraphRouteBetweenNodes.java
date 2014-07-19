@@ -1,49 +1,62 @@
 package Questions;
 
+// Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+
 import java.util.*;
 
 public class Four2_GraphRouteBetweenNodes {
-	public enum State {
-		Unvisited, Visited, Visiting;
-	}
-	
-	public class Node {
-		char label;
-		State state;
+
+	class Node {
+		char tag;
+		Node next;
+		State visited;
 		
-		Node[] getAdjacent() {
+		Node getAdjacents() {
+			// implement node.getAdjacents(). Return all adjacent nodes
 			return null;
 		}
+		
 	}
 	
-	public static boolean search(Graph g, Node start, Node end) {
-		if (start == end) return true;
+	class Graph {
+		ArrayList<Node> Nodes;
+		ArrayList Vertices;
 		
-		// operates as a Queue
-		LinkedList<Node> q = new LinkedList<Node>();
-		
-		for (Node u : g.getNodes()) {
-			u.state = State.Unvisited;
+		ArrayList<Node> getNodes() {
+			return Nodes;
 		}
-		
-		start.state = State.Visiting;
-		q.add(start);
-		Node u;
-		while (!q.isEmpty()) {
-			u = q.removeFirst(); //dequeue()
-			if (u != null) {
-				for (Node v : u.getAdjacent()) {
-					if (v.state == State.Unvisited) {
-						if (v == end) {
-							return true;
-						} else {
-							v.state = State.Visiting;
-							q.add(v);
-						}
+	}
+	
+	enum State {
+		Visited, Visiting, Unvisited;
+	}
+
+	boolean Search(Graph g, Node start, Node end) {
+		if (start == end) return true;
+
+		// traverse the graph g from start.
+		LinkedList<Node> queue = new LinkedList<Node>();
+
+		// initialize State for all Nodes
+		for (Node n : g.getNodes()) {
+			n.visited = State.Unvisited;
+		}
+
+		start.visited = State.Visiting;
+		queue.add(start);
+
+		while (!queue.isEmpty()) {
+			Node n = queue.removeFirst(); //queue.getFirst();
+			if ( n != null) {
+				for (Node v : n.getAdjacents()) {
+					if (v == end) return true;
+					if (v.visited == State.Unvisited) {
+						queue.add(v);
+						v.visited = State.Visiting;
 					}
 				}
-				u.state = State.Visited;
 			}
+			n.visited = State.Visited;
 		}
 		return false;
 	}
