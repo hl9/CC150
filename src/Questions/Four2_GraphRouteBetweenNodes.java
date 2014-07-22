@@ -59,6 +59,5 @@ public class Four2_GraphRouteBetweenNodes {
 			n.visited = State.Visited;
 		}
 		return false;
-
 	}
 }

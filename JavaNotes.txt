@@ -1,4 +1,4 @@
-
+﻿
 String functoins:
 	String 	str.substring(start_index, end_index);
 	char	str.charAt(index); //one character of a string
@@ -203,3 +203,7 @@ Inherit:
 Math:
 	Math.max(124, 22); // return max
 	Math.abs(-1); // return absolute value
+
+Integer:
+	Integer.MIN_VALUE
+	Integer.MAX_VALUE
