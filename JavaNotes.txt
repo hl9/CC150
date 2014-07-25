@@ -203,7 +203,11 @@ Inherit:
 Math:
 	Math.max(124, 22); // return max
 	Math.abs(-1); // return absolute value
+	(int) Math.sqrt(n); // return square root of n
 
 Integer:
 	Integer.MIN_VALUE
 	Integer.MAX_VALUE
+
+Division:
+	if (n % 10 == 0) { blabla}
